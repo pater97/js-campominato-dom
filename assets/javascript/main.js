@@ -11,9 +11,9 @@ con difficoltà 3 => tra 1 e 49
 const stampSquare = document.querySelector(".container")
 const playGame = document.querySelector('.controls > button')
 const gameDifficult = document.getElementById(`level`)
-
+const bombs = []
 //utilizzo di un condizionale per assegnare il numero di caselle in base al livello e ne stabilisco la grandezza
-function selectLevel(domElement){
+function playTheGame(domElement){
     const level = domElement.value
     var numCaselle = 0
     if(level == `1`){
@@ -27,6 +27,28 @@ function selectLevel(domElement){
     }
     console.log(numCaselle);
     cycle(numCaselle)
+    while (bombs.length < 16){
+        //genero un numero casuale attraverso la funzione 
+        const randomNumber = getRandomNumber(1,100)
+        //se il numero non si ripeto lo pusho nell'array
+        if(!bombs.includes(randomNumber)) {
+            bombs.push(randomNumber)
+        }
+    }
+    const cellElements = document.getElementsByClassName('square');
+    for (let index = 0; index < cellElements.length; index++) {
+        const element = cellElements[index];
+    
+        element.addEventListener('click', function () {
+          // prendere il contenuto della cell
+          const cellNumber = parseInt(this.innerText)
+          console.log(cellNumber);
+          // verifica se la cella é una bomba
+          is_a_bomb(cellNumber, bombs)
+        })
+    
+      }
+    
 }
 //utilizzare una funzione con ciclo for per stampare i quadrati
 function cycle (numero){
@@ -49,8 +71,34 @@ function cycle (numero){
     console.log(square);
     }
 }
-//funzione di selezione livello
 
+//funzione per capire se la cella è una bomba
+function is_a_bomb(cellNumber, bombs) {
+    if (bombs.includes(cellNumber)) {
+      console.log('is a bomb! Game over');
+    } else {
+      console.log('keep trying');
+    }
+  }
+//funzione per generare numeri casuali 
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+//funzione per generare i numeri bomba e inserirli nell'array
+function generateBomb(numeroCelle){
+    //creazione di un array vuoto
+    const bombs = []
+    //ciclo fino a ragiungere le 16 cife di cui ho bisogno
+    while (bombs.length < 16){
+        //genero un numero casuale attraverso la funzione 
+        const randomNumber = getRandomNumber(1,numeroCelle)
+        //se il numero non si ripeto lo pusho nell'array
+        if(!bombs.includes(randomNumber)) {
+            bombs.push(randomNumber)
+        }
+    }
+}
+//avvio del gioco al click
 playGame.addEventListener(`click`,function(){
-    selectLevel(gameDifficult)
+    playTheGame(gameDifficult)
 })
