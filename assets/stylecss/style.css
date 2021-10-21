@@ -64,13 +64,13 @@ footer{
     color:#297373;
 }
 /* utility */
-.one{
+.class_100{
     width: calc(100%/10);
     height: calc(100%/10);
 }
-.two{
+.class_81{
     width: calc(100%/9);
 }
-.trhee{
+.class_49{
     width: calc(100%/7);
 }
