@@ -1,0 +1,72 @@
+/* RESET IMPOSTAZIONI  */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* generali */
+body{
+    background-color: #39393A;
+}
+/* header */
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #297373;
+    align-items: center;
+    padding: 0 1rem;
+    color: white;
+}
+header img{
+    width: 60px;
+}
+header button{
+    padding: .5rem;
+    background-color: #85FFC7;
+    border-radius: 50%;
+    border: none;
+}
+#level{
+    border: none;
+    background-color: transparent;
+    color: #ff8e8e;
+}
+/* main  */
+main{
+    height: 80vh;
+}
+.container{
+    margin:5rem auto;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6E6E6 ;
+    border: 1px solid #297373;
+}
+/* footer */
+footer{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #85FFC7;
+    color:#297373;
+}
+/* utility */
+.one{
+    width: calc(100%/10);
+    height: calc(100%/10);
+}
+.two{
+    width: calc(100%/9);
+}
+.trhee{
+    width: calc(100%/7);
+}
