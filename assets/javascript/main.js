@@ -12,18 +12,23 @@ const stampSquare = document.querySelector(".container")
 const playGame = document.querySelector('.controls > button')
 const gameDifficult = document.getElementById(`level`)
 
-playGame.addEventListener(`click`,function(){
-    
-    selectLevel(gameDifficult)
-    cycle(numCaselle)
-})
 //utilizzo di un condizionale per assegnare il numero di caselle in base al livello e ne stabilisco la grandezza
-
-
-
-//partenza del gioco al play
-
-//utilizzare una funzione per il ciclo for 
+function selectLevel(domElement){
+    const level = domElement.value
+    var numCaselle = 0
+    if(level == `1`){
+        var numCaselle = 100
+    }else if(level == `2`){
+        var numCaselle = 81
+    }else if(level == `3`){
+        var numCaselle = 49
+    }else{
+        alert(`!ATTENZIONE! il livello indicato non è disponibile`)
+    }
+    console.log(numCaselle);
+    cycle(numCaselle)
+}
+//utilizzare una funzione con ciclo for per stampare i quadrati
 function cycle (numero){
     stampSquare.innerHTML = (``)
     for (let i = 1; i <= numero;i++){
@@ -34,7 +39,7 @@ function cycle (numero){
         //inserire testo nel div
         square.appendChild(text)
         //aggiungere le classi da utilizzare
-        square.className=`square ${sizeSquare}`
+        square.className=`square class_${numero}`
         //stampare il quadrato
         stampSquare.append(square)
         //al click aggiungere il background azzurro
@@ -45,21 +50,7 @@ function cycle (numero){
     }
 }
 //funzione di selezione livello
-function selectLevel(domElement){
-    const level = domElement.value
 
-    if(level == `1`){
-        var numCaselle = 100
-        var sizeSquare = `one`
-    }else if(level == `2`){
-        var numCaselle = 81
-        var sizeSquare = `two`
-    }else if(level == `3`){
-        var numCaselle = 49
-        var sizeSquare = `trhee`
-    }else{
-        alert(`!ATTENZIONE! il livello indicato non è disponibile`)
-    }
-    console.log(numCaselle);
-}
-console.log(numCaselle);
+playGame.addEventListener(`click`,function(){
+    selectLevel(gameDifficult)
+})
