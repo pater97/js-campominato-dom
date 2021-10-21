@@ -11,24 +11,21 @@ con difficoltà 3 => tra 1 e 49
 const stampSquare = document.querySelector(".container")
 const playGame = document.querySelector('.controls > button')
 const gameDifficult = document.getElementById(`level`)
-//utilizzo di un condizionale per assegnare il numero di caselle in base al livello e ne stabilisco la grandezza
-if(gameDifficult.value == 1){
-    var numCaselle = 100
-    var sizeSquare = `one`
-}else if(gameDifficult.value == 2){
-    var numCaselle = 81
-    var sizeSquare = `two`
-}else if(gameDifficult.value == 3){
-    var numCaselle = 49
-    var sizeSquare = `trhee`
-}else{
-    alert(`!ATTENZIONE! il livello indicato non è disponibile`)
-}
+
 playGame.addEventListener(`click`,function(){
+    
+    selectLevel(gameDifficult)
     cycle(numCaselle)
 })
+//utilizzo di un condizionale per assegnare il numero di caselle in base al livello e ne stabilisco la grandezza
+
+
+
+//partenza del gioco al play
+
 //utilizzare una funzione per il ciclo for 
 function cycle (numero){
+    stampSquare.innerHTML = (``)
     for (let i = 1; i <= numero;i++){
         //creare un nuovo div
         const square = document.createElement(`div`);
@@ -47,5 +44,22 @@ function cycle (numero){
     console.log(square);
     }
 }
-//invocare la funzione
+//funzione di selezione livello
+function selectLevel(domElement){
+    const level = domElement.value
 
+    if(level == `1`){
+        var numCaselle = 100
+        var sizeSquare = `one`
+    }else if(level == `2`){
+        var numCaselle = 81
+        var sizeSquare = `two`
+    }else if(level == `3`){
+        var numCaselle = 49
+        var sizeSquare = `trhee`
+    }else{
+        alert(`!ATTENZIONE! il livello indicato non è disponibile`)
+    }
+    console.log(numCaselle);
+}
+console.log(numCaselle);

@@ -43,6 +43,10 @@ main{
     display: flex;
     flex-wrap: wrap;
 }
+h1{
+    text-align: center;
+    color:#ff8e8e;
+}
 .square{
     display: flex;
     justify-content: center;
