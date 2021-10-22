@@ -1,76 +1,63 @@
-/* RESET IMPOSTAZIONI  */
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* impostazioni di reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-/* generali */
-body{
-    background-color: #39393A;
+
+body {
+  background:#7A6563 ;
 }
-/* header */
-header{
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: #297373;
-    align-items: center;
-    padding: 0 1rem;
-    color: white;
+/* header  */
+header {
+  height: 10vh;
+  background-color:#E5D4CE ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
 }
-header img{
-    width: 60px;
-}
-header button{
-    padding: .5rem;
-    background-color: #85FFC7;
-    border-radius: 50%;
-    border: none;
+button{
+  background-color: #DE6E4B;
+  border-radius: 50%;
+  padding: .6rem;
+  border: none;
 }
 #level{
-    border: none;
-    background-color: transparent;
-    color: #ff8e8e;
+  border: none;
+  background-color: transparent;
+  color: #DE6E4B;
 }
-/* main  */
-main{
-    height: 80vh;
+/* impostazioni main */
+main {
+  height: calc(100vh - 160px);
+  width: 1000px;
+  margin: 2rem auto;
 }
-.container{
-    margin:5rem auto;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-}
-h1{
-    text-align: center;
-    color:#ff8e8e;
-}
-.square{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #E6E6E6 ;
-    border: 1px solid #297373;
+
+.container {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 /* footer */
-footer{
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #85FFC7;
-    color:#297373;
+footer {
+  height: 5vh;
+  text-align: center;
+  background-color: #E5D4CE;
+  color: #DE6E4B;
 }
-/* utility */
-.class_100{
-    width: calc(100%/10);
-    height: calc(100%/10);
-}
-.class_81{
-    width: calc(100%/9);
-}
-.class_49{
-    width: calc(100%/7);
+
+
+
+
+.cell {
+  border: 1px solid #DE6E4B;
+  background-color: #E5D4CE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
